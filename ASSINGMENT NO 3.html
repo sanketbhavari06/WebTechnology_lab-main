@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beautiful Registration Form</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #e6e7e4, #d5d5d3);
+        }
+
+        .container {
+            background: rgb(255, 255, 255);
+            padding: 25px;
+            width: 400px;
+            border-radius: 12px;
+            box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h2 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-size: 14px;
+            font-weight: bold;
+            color: #555;
+            display: block;
+            text-align: left;
+            margin-top: 10px;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 12px;
+            margin-top: 5px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            outline: none;
+            transition: 0.3s;
+            background: #f9f9f9;
+        }
+
+        input:focus, select:focus, textarea:focus {
+            border-color: #715eff;
+            box-shadow: 0px 0px 8px rgba(255, 94, 98, 0.5);
+            background: white;
+        }
+
+        .gender-box {
+             /* display: flex;  */
+            justify-content:left;
+            margin-bottom: 15px;
+        }
+
+        .gender-box label {
+            font-size: 14px;
+            font-weight: normal;
+             display:flex; 
+            align-items:start;
+            justify-content:left;
+            cursor: pointer;
+        }
+       
+
+        .gender-box input {
+            width: auto;
+             margin-right: 5px;
+        }
+       
+
+        button {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: 0.3s;
+            font-size: 16px;
+            font-weight: bold;
+            color: white;
+            margin-top: 15px;
+        }
+
+        .btn-submit {
+            background: linear-gradient(135deg, #ff5e62, #ff6666);
+            box-shadow: 0px 5px 15px rgba(255, 94, 98, 0.3);
+        }
+
+        .btn-submit:hover {
+            background: linear-gradient(135deg, #ff3b42, #ff4444);
+            transform: scale(1.05);
+        }
+
+        .btn-reset {
+            background: #06f92a;
+        }
+
+        .btn-reset:hover {
+            background: #0cf22ff0;
+            transform: scale(1.05);
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Registration Form</h2>
+        <form action="register.php" method="POST">
+            <label>Full Name:</label>
+            <input type="text" name="fullname" required placeholder="Enter your name">
+
+            <label>Email:</label>
+            <input type="email" name="email" required placeholder="Enter your email">
+
+            <label>Password:</label>
+            <input type="password" name="password" required minlength="6" placeholder="Enter password">
+
+            <label>Confirm Password:</label>
+            <input type="password" name="confirmpassword" required minlength="6" placeholder="Confirm password">
+
+            <label>Gender:</label>
+            <div class="gender-box">
+                <label><input type="radio" name="gender" id="male" value="Male" required> Male</label>
+                <label><input type="radio" name="gender" id="female" value="Female"> Female</label>
+            </div>
+
+            <label>Date of Birth:</label>
+            <input type="date" name="dob" required>
+
+            <label>Phone Number:</label>
+            <input type="tel" name="phone" pattern="[0-9]{10}" required placeholder="Enter 10-digit number">
+
+            <label>Course:</label>
+            <select name="course" required>
+                <option value="">Select Course</option>
+                <option value="BSc IT">BSc IT</option>
+                <option value="BCA">BCA</option>
+                <option value="MCA">MCA</option>
+                <option value="B.Tech">B.Tech</option>
+            </select>
+
+            <label>Address:</label>
+            <textarea name="address" rows="3" required placeholder="Enter your address"></textarea>
+
+            <button type="submit" class="btn-submit">Register</button>
+            <button type="reset" class="btn-reset">Reset</button>
+        </form>
+    </div>
+
+</body>
+</html>
