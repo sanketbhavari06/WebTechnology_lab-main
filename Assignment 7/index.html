@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Book Management</title>
+</head>
+<body>
+    <h1>Book Management</h1>
+
+    <form action="BookServlet" method="post">
+        <label>Book ID:</label><input type="text" name="id"><br>
+        <label>Title:</label><input type="text" name="title"><br>
+        <label>Author:</label><input type="text" name="author"><br>
+        <label>Price:</label><input type="text" name="price"><br>
+        <label>Quantity:</label><input type="text" name="qty"><br><br>
+
+        <input type="submit" name="action" value="Insert">
+        <input type="submit" name="action" value="Update">
+        <input type="submit" name="action" value="Delete">
+        <input type="submit" name="action" value="Display">
+    </form>
+</body>
+</html>
