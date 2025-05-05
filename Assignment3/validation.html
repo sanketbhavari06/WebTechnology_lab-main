@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validation</title>
+    <script type="text/javascript">
+        function validate(){
+            if(document.f1.t1.value==""){
+                alert("Please enter the name");
+                document.f1.t1.focus();
+            }
+            else if(document.f1.t2.value==""){
+                alert("Please enter the email");
+                document.f1.t2.focus();
+            }
+            else{
+                alert("record inserted succesfully");
+            }
+            
+        }
+    </script>
+</head>
+<body>
+    <form name="f1" action="home.html" method="post">
+        Enter name:<input type="text" name="t1" value=""/><br>
+        Enter email:<input type="text" name="t2" value=""/><br>
+        <input type="button" name="b1" value="submit" onclick="validate()"/>
+    </form>
+</body>
+</html>
