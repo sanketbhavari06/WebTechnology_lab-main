@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sanket Electronics</title>
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        /* Header Styles */
+        .header {
+            background: linear-gradient(90deg, #382309, #382026);
+            color: white;
+            padding: 10px 20px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        .header .logo {
+            font-size: 24px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+        }
+        .header .logo i {
+            margin-right: 10px;
+        }
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .nav-links {
+            display: flex;
+            align-items: center;
+        }
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 16px;
+            transition: color 0.3s ease;
+        }
+        .nav-links a:hover {
+            color: #ffd700;
+        }
+        .search-bar {
+            display: flex;
+            align-items: center;
+        }
+        .search-bar input {
+            padding: 8px;
+            border: none;
+            border-radius: 5px 0 0 5px;
+            outline: none;
+        }
+        .search-bar button {
+            padding: 8px 12px;
+            background-color: #ff8c00;
+            border: none;
+            border-radius: 0 5px 5px 0;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .search-bar button:hover {
+            background-color: #ff2e63;
+        }
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+        .hamburger div {
+            width: 25px;
+            height: 3px;
+            background-color: white;
+            margin: 4px 0;
+            transition: all 0.3s ease;
+        }
+
+        /* Product Styles */
+        .products {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+        .product {
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            width: 220px;
+            margin: 15px;
+            transition: transform 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        .product:hover {
+            transform: scale(1.05);
+        }
+        .product img {
+            width: 100%;
+            border-radius: 5px;
+        }
+        .product h3 {
+            margin: 10px 0;
+        }
+        .product p {
+            margin: 5px 0;
+            flex-grow: 1;
+        }
+        .product .price {
+            font-size: 20px;
+            color: #ff2e63;
+            margin: 10px 0;
+        }
+        .product .buy-btn {
+            padding: 10px 15px;
+            background-color: #ff8c00;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-transform: uppercase;
+            width: 100%;
+            transition: background-color 0.3s ease;
+        }
+        .product .buy-btn:hover {
+            background-color: #ff2e2e;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                background-color: #002aff;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                padding: 10px 0;
+            }
+            .nav-links.active {
+                display: flex;
+            }
+            .hamburger {
+                display: flex;
+            }
+            .search-bar {
+                margin-top: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <div class="header">
+        <div class="container">
+            <div class="nav">
+                <div class="logo">
+                    <i class="fas fa-laptop"></i>
+                    SANKET ELECTRONICS
+                </div>
+                <div class="nav-links" id="navLinks">
+                    <a href="#"><i class="fas fa-home"></i> Home</a>
+                    <a href="#"><i class="fas fa-shopping-cart"></i> Cart</a>
+                    <a href="#"><i class="fas fa-list"></i> Categories</a>
+                    <a href="#"><i class="fas fa-gamepad"></i> Play</a>
+                    <a href="#"><i class="fas fa-user"></i> Account</a>
+                    <a href="#"><i class="fas fa-sign-in-alt"></i> Login</a>
+                </div>
+                <div class="search-bar">
+                    <input type="text" placeholder="Search products...">
+                    <button><i class="fas fa-search"></i></button>
+                </div>
+                <div class="hamburger" id="hamburger">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Product Section -->
+    <div class="container">
+        <div class="products">
+            <!-- All Products -->
+            <div class="product">
+                <img src="tv.jpg" alt="Smart TV">
+                <h3>Smart TV</h3>
+                <p>Ultra HD 4K Display with AI Features.</p>
+                <div class="price">₹59,999</div>
+                <button class="buy-btn">Buy Now</button>
+            </div>
+            <div class="product">
+                <img src="laptop.jpg" alt="Laptop">
+                <h3>Laptop</h3>
+                <p>High Performance Laptop with 16GB RAM.</p>
+                <div class="price">₹89,999</div>
+                <button class="buy-btn">Buy Now</button>
+            </div>
+            <div class="product">
+                <img src="phone.jpg" alt="Smartphone">
+                <h3>Smartphone</h3>
+                <p>Latest 5G Smartphone with AMOLED Display.</p>
+                <div class="price">₹74,999</div>
+                <button class="buy-btn">Buy Now</button>
+            </div>
+            <div class="product">
+                <img src="headphone.jpg" alt="Headphones">
+                <h3>Headphones</h3>
+                <p>Wireless Noise Cancelling Headphones.</p>
+                <div class="price">₹14,999</div>
+                <button class="buy-btn">Buy Now</button>
+            </div>
+            <div class="product">
+                <img src="tablet.jpg" alt="Tablet">
+                <h3>Tablet</h3>
+                <p>Lightweight Tablet with 10-inch Display.</p>
+                <div class="price">₹29,999</div>
+                <button class="buy-btn">Buy Now</button>
+            </div>
+            <div class="product">
+                <img src="samrtwatch.jpg" alt="Smartwatch">
+                <h3>Smartwatch</h3>
+                <p>Fitness Tracker with Heart Rate Monitor.</p>
+                <div class="price">₹11,999</div>
+                <button class="buy-btn">Buy Now</button>
+            </div>
+            <div class="product">
+                <img src="camera.jpg" alt="Camera">
+                <h3>Camera</h3>
+                <p>Professional DSLR Camera with 24MP.</p>
+                <div class="price">₹67,999</div>
+                <button class="buy-btn">Buy Now</button>
+            </div>
+            <div class="product">
+                <img src="printer.jpg" alt="Printer">
+                <h3>Printer</h3>
+                <p>Wireless Color Printer with Fast Printing.</p>
+                <div class="price">₹9,999</div>
+                <button class="buy-btn">Buy Now</button>
+            </div>
+            <div class="product">
+                <img src="speaker.jpg" alt="Speakers">
+                <h3>Speakers</h3>
+                <p>Bluetooth Speakers with Deep Bass.</p>
+                <div class="price">₹7,499</div>
+                <button class="buy-btn">Buy Now</button>
+            </div>
+            <div class="product">
+                <img src="mouse.jpg" alt="Mouse">
+                <h3>Wireless Mouse</h3>
+                <p>Ergonomic Design with Long Battery Life.</p>
+                <div class="price">₹2,199</div>
+                <button class="buy-btn">Buy Now</button>
+            </div>
+            <div class="product">
+                <img src="keyboard.jpg" alt="Keyboard">
+                <h3>Mechanical Keyboard</h3>
+                <p>RGB Backlit Keys with Fast Response.</p>
+                <div class="price">₹5,999</div>
+                <button class="buy-btn">Buy Now</button>
+            </div>
+            <div class="product">
+                <img src="router.jpg" alt="Router">
+                <h3>Wi-Fi Router</h3>
+                <p>Dual Band Router with High-Speed Internet.</p>
+                <div class="price">₹4,499</div>
+                <button class="buy-btn">Buy Now</button>
+            </div>
+            <div class="product">
+                <img src="external ssd.jpeg" alt="SSD">
+                <h3>External SSD</h3>
+                <p>1TB Portable SSD with High-Speed Transfer.</p>
+                <div class="price">₹11,999</div>
+                <button class="buy-btn">Buy Now</button>
+            </div>
+            <div class="product">
+                <img src="usbdrive.jpg" alt="USB Drive">
+                <h3>USB Drive</h3>
+                <p>128GB Flash Drive with Fast Read Speed.</p>
+                <div class="price">₹2,999</div>
+                <button class="buy-btn">Buy Now</button>
+            </div>
+            <div class="product">
+                <img src="gamingconsol.jpg" alt="Gaming Console">
+                <h3>Gaming Console</h3>
+                <p>Next-Gen Console with Ultra HD Graphics.</p>
+                <div class="price">₹37,999</div>
+                <button class="buy-btn">Buy Now</button>
+            </div>
+            <div class="product">
+                <img src="monitor.jpg" alt="Monitor">
+                <h3>Monitor</h3>
+                <p>27-inch 4K UHD Monitor with HDR.</p>
+                <div class="price">₹26,999</div>
+                <button class="buy-btn">Buy Now</button>
+            </div>
+            <div class="product">
+                <img src="powerbank.jpg" alt="Power Bank">
+                <h3>Power Bank</h3>
+                <p>20,000mAh Battery with Fast Charging.</p>
+                <div class="price">₹3,799</div>
+                <button class="buy-btn">Buy Now</button>
+            </div>
+            <div class="product">
+                <img src="drone.jpg" alt="Drone">
+                <h3>Drone</h3>
+                <p>4K Camera Drone with GPS.</p>
+                <div class="price">₹44,999</div>
+                <button class="buy-btn">Buy Now</button>
+            </div>
+            <div class="product">
+                <img src="projector.jpg" alt="Projector">
+                <h3>Projector</h3>
+                <p>1080p HD Projector with Wi-Fi Support.</p>
+                <div class="price">₹22,999</div>
+                <button class="buy-btn">Buy Now</button>
+            </div>
+            <div class="product">
+                <img src="airbuds.jpg" alt="Earbuds">
+                <h3>Earbuds</h3>
+                <p>True Wireless Earbuds with Noise Isolation.</p>
+                <div class="price">₹6,799</div>
+                <button class="buy-btn">Buy Now</button>
+            </div>
+            <div class="product">
+                <img src="smartbulb.jpg" alt="Smart Bulb">
+                <h3>Smart Bulb</h3>
+                <p>Wi-Fi Enabled LED Bulb with Voice Control.</p>
+                <div class="price">₹1,499</div>
+                <button class="buy-btn">Buy Now</button>
+            </div>
+            <div class="product">
+                <img src="smartdoorlock.jpg" alt="Smart Door Lock">
+                <h3>Smart Door Lock</h3>
+                <p>Keyless Entry with Fingerprint Sensor.</p>
+                <div class="price">₹14,999</div>
+                <button class="buy-btn">Buy Now</button>
+            </div>
+            <div class="product">
+                <img src="airpurifire.jpg" alt="Air Purifier">
+                <h3>Air Purifier</h3>
+                <p>HEPA Filter with Air Quality Monitoring.</p>
+                <div class="price">₹9,999</div>
+                <button class="buy-btn">Buy Now</button>
+            </div>
+            <div class="product">
+                <img src="vrheadset.jpg" alt="VR Headset">
+                <h3>VR Headset</h3>
+                <p>Immersive Virtual Reality Experience.</p>
+                <div class="price">₹22,999</div>
+                <button class="buy-btn">Buy Now</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Script for Hamburger Menu -->
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('navLinks');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>
